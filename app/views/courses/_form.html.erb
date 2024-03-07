@@ -1,0 +1,22 @@
+<%= form_with(model: course, class: "container") do |form| %>
+  <% if course.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

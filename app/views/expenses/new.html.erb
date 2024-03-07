@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="mb-4">New expense</h1>
+
+  <%= render "form", expense: @expense %>
+
+  <div class="mt-4">
+    <%= link_to "Back to expenses", expenses_path, class: "btn btn-secondary" %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <p class="text-success"><%= notice %></p>
+
+  <%= render @admission %>
+
+  <div class="mt-4">
+    <%= link_to "Edit this admission", edit_admission_path(@admission), class: "btn btn-primary me-2" %> |
+    <%= link_to "Back to admissions", admissions_path, class: "btn btn-secondary me-2" %>
+
+    <%= button_to "Destroy this admission", @admission, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </div>
+</div>

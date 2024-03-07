@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="mb-4">New admission</h1>
+
+  <%= render "form", admission: @admission %>
+
+  <div class="mt-4">
+    <%= link_to "Back to admissions", admissions_path, class: "btn btn-secondary" %>
+  </div>
+</div>

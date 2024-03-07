@@ -1,0 +1,18 @@
+<div class="container">
+  <p class="text-success"><%= notice %></p>
+
+  <h1 class="mb-4">Subjects</h1>
+
+  <div id="subjects">
+    <% @subjects.each do |subject| %>
+      <div class="card mb-3">
+        <%= render subject %>
+        <div class="card-footer">
+          <%= link_to "Show this subject", subject, class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "New subject", new_subject_path, class: "btn btn-success" %>
+</div>

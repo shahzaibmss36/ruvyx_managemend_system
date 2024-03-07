@@ -1,0 +1,18 @@
+<div class="container">
+  <p class="text-success"><%= notice %></p>
+
+  <h1 class="mb-4">Admissions</h1>
+
+  <div id="admissions">
+    <% @admissions.each do |admission| %>
+      <div class="card mb-3">
+        <%= render admission %>
+        <div class="card-footer">
+          <%= link_to "Show this admission", admission, class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "New admission", new_admission_path, class: "btn btn-success" %>
+</div>

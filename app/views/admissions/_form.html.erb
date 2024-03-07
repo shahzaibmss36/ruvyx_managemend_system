@@ -1,0 +1,47 @@
+<%= form_with(model: admission, class: "container") do |form| %>
+  <% if admission.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(admission.errors.count, "error") %> prohibited this admission from being saved:</h2>
+
+      <ul>
+        <% admission.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :father_name, class: "form-label" %>
+    <%= form.text_field :father_name, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :date_of_birth, class: "form-label" %>
+    <%= form.date_field :date_of_birth, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :address, class: "form-label" %>
+    <%= form.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :user_id, class: "form-label" %>
+    <%= form.text_field :user_id, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :course_id, class: "form-label" %>
+    <%= form.select :course_id, Course.pluck(:name, :id), { include_blank: true }, class: "form-select" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
